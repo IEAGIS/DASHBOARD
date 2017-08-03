@@ -6,4 +6,4 @@ $(document).ready(function () {
 	
 	$("#chart").load("http://mimisbrunnr/IEA_Widgets/pcpi.html");
 	calcite.bus.emit('accordion:toggle',{node: document.getElementById('a2')});
-});
+}); 
