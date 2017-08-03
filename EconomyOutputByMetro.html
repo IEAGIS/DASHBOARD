@@ -1,0 +1,331 @@
+
+<!doctype html>
+<!--[if lt IE 9]>  <html class="ie lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9"> <![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Arkanstats Dashboard</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- get calcite-web css from the cdn (use latest version) -->
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/css/calcite-web.min.css">
+	<link rel='stylesheet' href='/jqwidgets/jqwidgets/styles/jqx.base.css' type='text/css'/>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- This code was auto-generated based on the selected settings -->
+	<!-- It has a dependency on jQWidgets ver.3.7 or later -->
+
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxcore.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxdata.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxdraw.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxchart.core.js'></script>
+    <!--[if lt IE 9]>
+      <script src="/assets/javascripts/libs/selectivizr.js"></script>
+      <script src="/assets/javascripts/libs/html5shiv.js"></script>
+    <![endif]-->
+	<style>
+		.accordion-title {
+			background-color: #ffffff;
+		}
+	</style>	
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- top navigation -->
+      <!--header class="top-nav">
+        <div class="grid-container">
+          <div class="column-24">
+            <a href="#" class="top-nav-title">Arkanstats Dashboard</a>
+            <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+              <a class="top-nav-link is-active" href="#">Economy</a>
+              <a class="top-nav-link" href="#">Infrastructure</a>
+              <a class="top-nav-link" href="#">Education and Human Capital</a>
+              <a class="top-nav-link" href="#">Quality of Life and Place</a>
+              <a class="top-nav-link" href="#">Demographics</a>
+            </nav>
+          </div>
+        </div>
+      </header-->
+
+      <!-- banner -->
+      <div class="panel panel-dark-blue trailer-2">
+        <div class="grid-container">
+          <div class="column-24">
+            <a href="index.html"><h1 class="sub-nav-title leader-1 text-white">Arkanstats Dashboard</h1></a>
+			<nav class="sub-nav-list" role="navigation" aria-labelledby="subnav">
+			  <a href="#" class="sub-nav-link  is-active ">Economy</a>
+			  <a href="Infrastructure.html" class="sub-nav-link ">Infrastructure</a>
+			  <a href="Education.html" class="sub-nav-link ">Education and Human Capital</a>
+			  <a href="Quality.html" class="sub-nav-link ">Quality of Life and Place</a>
+			  <a href="Demographics.html" class="sub-nav-link ">Demographics</a>
+			</nav>         
+		  </div>
+        </div>
+      </div>
+
+      <!-- main-content -->
+      <div class="grid-container">
+
+        <!-- side navigation -->
+        <div class="column-4">
+			<aside class="side-nav" aria-role="complementary">
+            <h4 class="side-nav-title text-blue">Economy</h4>			
+				<aside class="js-accordion accordion">
+				  <div class="accordion-section">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Output
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav">
+						  <a href="#" class="side-nav-link padding-left-2  is-active">GDP</a>
+						  <!--a href="#" class="side-nav-link padding-left-2  is-active">By metro </a-->
+						</nav>				  
+					</div>
+				  </div>
+				  <div class="accordion-section">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Income
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav">
+						  <a href="#" class="side-nav-link padding-left-2">Personal</a>
+						  <a href="#" class="side-nav-link padding-left-2">Per capita</a>
+						</nav>				  
+					</div>
+				  </div>
+				  <div class="accordion-section">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Employment
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav">
+						  <a href="#" class="side-nav-link padding-left-2">Link 1</a>
+						  <a href="#" class="side-nav-link padding-left-2">Link 2</a>
+						</nav>				  
+					</div>
+				  </div>
+				  <div class="accordion-section">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Spending
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav">
+						  <a href="#" class="side-nav-link padding-left-2">PCE</a>
+						  <a href="#" class="side-nav-link padding-left-2">Arkansas Tax Sales</a>
+						</nav>				  
+					</div>
+				  </div>
+				</aside>			
+				<!--nav role="navigation" aria-labelledby="sidenav">
+				  <a href="#" class="side-nav-link">Population Components</a>
+				  <a href="#" class="side-nav-link">Population Characteristics</a>
+				  <a href="#" class="side-nav-link">Projections</a>
+				</nav-->
+			  </aside>
+			 </aside>	  
+		</div>
+        <!-- main content list -->
+        <div class="column-19 pre-1">
+			<!--h2 class="leader-1">Gross Domestic Product Arkansas' MSA's</h2>
+			<div class="column-15 center-column">
+				<div class="panel modifier-class">
+							  
+				  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 800px;'></div></p>
+				</div>
+			</div>
+			<h2 class="leader-1">What does this mean?</h2>
+			  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+			  <h2>How do we measure this?</h2>
+			  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p-->
+			  
+
+			<div class=" trailer-2 js-tab-group">
+			  <nav class="tab-nav">
+				<a class="tab-title is-active js-tab">Analysis (optional)</a>
+				<a class="tab-title js-tab">MSA Comparison</a>
+				<a class="tab-title js-tab">State Comparison</a>
+			  </nav>
+			  <section class="tab-contents">
+				<article class="tab-section js-tab-section is-active">
+					<p><div class="pre-1">
+						<h2 class="leader-1">GDP Analysis Headline</h2>
+						<div class="column-15 center-column">
+							<div class="panel modifier-class">
+										  
+							  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 800px;'	></div></p>
+							</div>
+						</div>
+						<h2 class="leader-1">What does this mean?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+						  <h2>How do we measure this?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+					</div>      
+				</p></article>
+				<article class="tab-section js-tab-section">
+				  <p>Tab 2 section</p>
+				</article>
+				<article class="tab-section js-tab-section">
+				  <p>Tab 3 section</p>
+				</article>
+			  </section>
+			</div>		
+
+        </div>
+	</div>
+    <div class="footer padding-trailer-1 text-darkest-gray" role="contentinfo">
+      <div class="grid-container">
+        <!-- footer section 1 -->
+        <div class="column-5 pre-2">
+          <h6 class="font-size--2 avenir-bold">Header 2</h6>
+          <ul class="list-plain font-size--2">
+            <li><a class="link-darker-gray" href="#">Link 1</a></li>
+            <li><a class="link-darker-gray" href="#">Link 2</a></li>
+            <li><a class="link-darker-gray" href="#">Link 3</a></li>
+          </ul>
+        </div>
+
+        <!-- footer section 2 -->
+        <div class="column-5 pre-1">
+          <h6 class="font-size--2 avenir-bold">Header 2</h6>
+          <ul class="list-plain font-size--2">
+            <li><a class="link-darker-gray" href="#">Link 1</a></li>
+            <li><a class="link-darker-gray" href="#">Link 2</a></li>
+            <li><a class="link-darker-gray" href="#">Link 3</a></li>
+          </ul>
+        </div>
+
+        <!-- footer section 3 -->
+        <div class="column-5 pre-1">
+          <h6 class="font-size--2 avenir-bold">Header 3</h6>
+          <ul class="list-plain font-size--2">
+            <li><a class="link-darker-gray" href="#">Link 1</a></li>
+            <li><a class="link-darker-gray" href="#">Link 2</a></li>
+            <li><a class="link-darker-gray" href="#">Link 3</a></li>
+          </ul>
+        </div>
+
+        <!-- footer section 4 -->
+        <div class="column-4 pre-1">
+          <h6 class="font-size--2 avenir-bold">Header 4</h6>
+          <ul class="list-plain font-size--2">
+            <li><a class="link-darker-gray" href="#">Link 1</a></li>
+            <li><a class="link-darker-gray" href="#">Link 2</a></li>
+            <li><a class="link-darker-gray" href="#">Link 3</a></li>
+          </ul>
+        </div>
+
+    </div>
+  </div>
+  </div>
+    <!-- get calcite-web js from the cdn (use latest version) -->
+    <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/js/calcite-web.min.js"></script>
+    <!-- interactive patterns need to be initialized -->
+    <script>
+       calcite.init()
+    </script>
+	<script>
+		$(document).ready(function () {
+			/* input data */
+			var data = [
+			{Year: '2001', 'Little Rock-North Little Rock-Conway': '22066', 'Fayetteville-Springdale-Rogers': '10911', 'Fort Smith': '6772', 'Jonesboro': '2836', 'Hot Springs': '1952', 'Pine Bluff': '2434'},
+			{Year: '2002', 'Little Rock-North Little Rock-Conway': '23300', 'Fayetteville-Springdale-Rogers': '11953', 'Fort Smith': '7051', 'Jonesboro': '2933', 'Hot Springs': '2010', 'Pine Bluff': '2487'},
+			{Year: '2003', 'Little Rock-North Little Rock-Conway': '24144', 'Fayetteville-Springdale-Rogers': '13224', 'Fort Smith': '7517', 'Jonesboro': '3201', 'Hot Springs': '2097', 'Pine Bluff': '2600'},
+			{Year: '2004', 'Little Rock-North Little Rock-Conway': '25383', 'Fayetteville-Springdale-Rogers': '14870', 'Fort Smith': '7973', 'Jonesboro': '3424', 'Hot Springs': '2241', 'Pine Bluff': '2779'},
+			{Year: '2005', 'Little Rock-North Little Rock-Conway': '27199', 'Fayetteville-Springdale-Rogers': '16134', 'Fort Smith': '8717', 'Jonesboro': '3566', 'Hot Springs': '2405', 'Pine Bluff': '2843'},
+			{Year: '2006', 'Little Rock-North Little Rock-Conway': '29131', 'Fayetteville-Springdale-Rogers': '17179', 'Fort Smith': '9441', 'Jonesboro': '3725', 'Hot Springs': '2533', 'Pine Bluff': '3003'},
+			{Year: '2007', 'Little Rock-North Little Rock-Conway': '32269', 'Fayetteville-Springdale-Rogers': '17662', 'Fort Smith': '9362', 'Jonesboro': '3760', 'Hot Springs': '2573', 'Pine Bluff': '2991'},
+			{Year: '2008', 'Little Rock-North Little Rock-Conway': '32196', 'Fayetteville-Springdale-Rogers': '18585', 'Fort Smith': '9682', 'Jonesboro': '3953', 'Hot Springs': '2626', 'Pine Bluff': '3035'},
+			{Year: '2009', 'Little Rock-North Little Rock-Conway': '32771', 'Fayetteville-Springdale-Rogers': '18350', 'Fort Smith': '9089', 'Jonesboro': '4016', 'Hot Springs': '2575', 'Pine Bluff': '3032'},
+			{Year: '2010', 'Little Rock-North Little Rock-Conway': '33325', 'Fayetteville-Springdale-Rogers': '20088', 'Fort Smith': '9583', 'Jonesboro': '4241', 'Hot Springs': '2732', 'Pine Bluff': '3107'},
+			{Year: '2011', 'Little Rock-North Little Rock-Conway': '34603', 'Fayetteville-Springdale-Rogers': '21590', 'Fort Smith': '9792', 'Jonesboro': '4283', 'Hot Springs': '2952', 'Pine Bluff': '3106'},
+			{Year: '2012', 'Little Rock-North Little Rock-Conway': '35720', 'Fayetteville-Springdale-Rogers': '22201', 'Fort Smith': '9932', 'Jonesboro': '4339', 'Hot Springs': '3143', 'Pine Bluff': '3154'},
+			{Year: '2013', 'Little Rock-North Little Rock-Conway': '37371', 'Fayetteville-Springdale-Rogers': '22959', 'Fort Smith': '10421', 'Jonesboro': '4616', 'Hot Springs': '3305', 'Pine Bluff': '3144'},
+			{Year: '2014', 'Little Rock-North Little Rock-Conway': '38330', 'Fayetteville-Springdale-Rogers': '24499', 'Fort Smith': '10771', 'Jonesboro': '4651', 'Hot Springs': '3391', 'Pine Bluff': '3104'},
+			{Year: '2015', 'Little Rock-North Little Rock-Conway': '39270', 'Fayetteville-Springdale-Rogers': '26034', 'Fort Smith': '10633', 'Jonesboro': '4843', 'Hot Springs': '3368', 'Pine Bluff': '3055'}];
+			
+			/* data adapter settings */
+			var dataAdapter = new $.jqx.dataAdapter({
+				localdata: data,
+				datafields: [
+					{name: "Year", type: "number"},
+					{name: "Little Rock-North Little Rock-Conway", type: "number"},
+					{name: "Fayetteville-Springdale-Rogers", type: "number"},
+					{name: "Fort Smith", type: "number"},
+					{name: "Jonesboro", type: "number"},
+					{name: "Hot Springs", type: "number"},
+					{name: "Pine Bluff", type: "number"}
+				]
+			});
+
+			/* chart settings */
+			var chartSettings = {
+				source: dataAdapter,
+				title: "Gross Domestic Product Arkansas' MSAs",
+				description: " (Millions of Dollars)",
+				padding: {
+					left: 5,
+					top: 5,
+					right: 5,
+					bottom: 5
+				},
+				titlePadding: {
+					left: 5,
+					top: 5,
+					right: 5,
+					bottom: 5
+				},
+				enableAnimations: false,
+				xAxis: {
+					dataField: "Year",
+					valuesOnTicks: false
+				},
+				valueAxis: {
+					valuesOnTicks: true
+				},
+				seriesGroups: [			
+					{
+						type: "column",
+						series: [					
+							{
+								dataField: "Little Rock-North Little Rock-Conway"
+							},
+							{
+								dataField: "Fayetteville-Springdale-Rogers"
+							},
+							{
+								dataField: "Fort Smith"
+							},
+							{
+								dataField: "Jonesboro"
+							},
+							{
+								dataField: "Hot Springs"
+							},
+							{
+								dataField: "Pine Bluff"
+							}
+						]
+					}
+				]
+			}
+			
+			/* create chart in the container element */
+			$('#chartContainer').jqxChart(chartSettings);
+		});
+	</script>	
+  </body>
+</html>
