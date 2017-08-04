@@ -42,8 +42,8 @@ $(document).ready(function () {
 		/* chart settings */
 		var chartSettings = {
 			source: dataAdapter,
-			title: "Gross Domestic Product Arkansas' MSAs",
-			description: " (Millions of Dollars)",
+			title: "Gross Domestic Product",
+			description: "2001 - 2015 (Millions of Dollars)",
 			padding: {
 				left: 5,
 				top: 5,
@@ -132,8 +132,8 @@ $(document).ready(function () {
 		/* chart settings */
 		var chartSettings = {
 			source: dataAdapter,
-			title: "Gross Domestic Product Arkansas' MSAs",
-			description: "Growth Index (2001=100)",
+			title: "GDP Growth Index",
+			description: "2001 - 2015 (2001=100)",
 			padding: {
 				left: 5,
 				top: 5,
@@ -185,17 +185,94 @@ $(document).ready(function () {
 		$('#chartContainer1').jqxChart(chartSettings);
 	}	
 	
+	var initPie = function(){
+		
+		/* input data */
+		var data = [
+		{2001: '0.469779225', City: 'Little Rock-North Little Rock-Conway'},
+		{2001: '0.232292265', City: 'Fayetteville-Springdale-Rogers'},
+		{2001: '0.144174065', City: 'Fort Smith'},
+		{2001: '0.06037768', City: 'Jonesboro'},
+		{2001: '0.041557557', City: 'Hot Springs'},
+		{2001: '0.051819208', City: 'Pine Bluff'}];
+		
+		/* data adapter settings */
+		var dataAdapter = new $.jqx.dataAdapter({
+			localdata: data,
+			datafields: [
+				{name: "City", type: "string"},
+				{name: "2001", type: "number"}
+			]
+		});
+
+		/* chart settings */
+		var chartSettings = {
+			source: dataAdapter,
+			title: "Relative Shares of GDP",
+			description: "2001",
+			legendLayout: {
+				left: 70,
+				top: 160,
+				width: 300,
+				height: 200,
+				flow: "vertical"
+			},
+			padding: {
+				left: 5,
+				top: 5,
+				right: 5,
+				bottom: 5
+			},
+			titlePadding: {
+				left: 5,
+				top: 5,
+				right: 5,
+				bottom: 5
+			},
+			enableAnimations: false,
+			xAxis: {
+				dataField: "City",
+				valuesOnTicks: false
+			},
+			valueAxis: {
+				valuesOnTicks: true
+			},
+			seriesGroups: [			
+				{
+					type: "pie",
+					series: [					
+						{
+							dataField: "2001",
+							displayText: "City",
+							labels: {
+								visible: true
+							},
+							formatFunction: function (value) {
+								if (isNaN(value)) return value;
+								return parseFloat(value * 100).toFixed(2) + '%';
+							},
+							radius: 120,
+							enableSeriesToggle: false
+						}
+					]
+				}
+			]
+		}
+		
+		/* create chart in the container element */
+		$('#pieChartContainer').jqxChart(chartSettings);		
+	}
+	
 	initGDP();
 	calcite.bus.on('tabs:active', function (options) {
 	  //console.log(options.active.id) // => "top-nav"
 		switch (options.active.id) {
-			case "0":
-			if (tab2Initialized===false)
-				initGDP();
-			break;
 			case "1":
-			if (tab2Initialized===false)
+			if (tab2Initialized===false){
 				initGrowth();
+				initPie();
+				initGDP();				
+			}	
 			tab2Initialized=true;	
 			break;
 			default:

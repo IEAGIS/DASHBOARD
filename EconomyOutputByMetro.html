@@ -29,6 +29,12 @@
 		.accordion-title {
 			background-color: #ffffff;
 		}
+		table th, table td {
+			font-weight: 300;
+			border-left: 0px;
+			border-right: 0px;
+			padding: 0;
+		}		
 	</style>	
   </head>
   <body>
@@ -96,7 +102,7 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2">Personal</a>
+						  <a href="EconomyIncomePersonal.html" class="side-nav-link padding-left-2">Personal</a>
 						  <a href="#" class="side-nav-link padding-left-2">Per capita</a>
 						</nav>				  
 					</div>
@@ -144,8 +150,8 @@
 			<div class=" trailer-2 js-tab-group">
 			  <nav class="tab-nav">
 				<a class="tab-title is-active js-tab" id="0">Analysis (optional)</a>
-				<a class="tab-title js-tab" id="1">MSA Comparison</a>
-				<a class="tab-title js-tab" id="2">State Comparison</a>
+				<a class="tab-title js-tab" id="1">Arkansas MSA's</a>
+				<a class="tab-title js-tab" id="2">Another Tab</a>
 			  </nav>
 			  <section class="tab-contents">
 				<article class="tab-section js-tab-section is-active">
@@ -154,7 +160,7 @@
 						<div class="column-17 center-column">
 							<div class="panel modifier-class">
 										  
-							  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 900px;'	></div></p>
+							  <p class="trailer-0"><img src="img/Analysis.png"></p>
 							</div>
 						</div>
 						<h2 class="leader-1">What does this mean?</h2>
@@ -165,10 +171,16 @@
 				</p></article>
 				<article class="tab-section js-tab-section">
 				  <p><div class="pre-1">
-						<h2 class="leader-1">Compare MSA's</h2>
+						<h2 class="leader-1">Arkansas MSA's</h2>
 						<div class="column-17 center-column">
 							<div class="panel modifier-class">										  
-							  <p class="trailer-0"><div id="chartContainer1" style='height: 400px; width: 900px;'></div></p>
+							  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 900px;'></div></p>
+							</div>
+							<div class="panel modifier-class">										  
+							  <div id="chartContainer1" style='height: 400px; width: 900px;'></div>
+							</div>
+							<div class="panel modifier-class">										  
+							  <p class="trailer-0"><div id="pieChartContainer" style='height: 400px; width: 900px;'></div></p>
 							</div>
 						</div>
 					  </div>
