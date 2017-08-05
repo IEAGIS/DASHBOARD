@@ -62,7 +62,19 @@ $(document).ready(function () {
 				valuesOnTicks: false
 			},
 			valueAxis: {
-				valuesOnTicks: true
+				valuesOnTicks: true,
+				labels: {
+					formatSettings: {
+						prefix: "$",
+						thousandsSeparator: ",",
+						decimalPlaces: 0
+					}
+				},
+				toolTipFormatSettings: {
+					prefix: "$",
+					thousandsSeparator: ",",
+					decimalPlaces: 0
+				}
 			},
 			seriesGroups: [			
 				{
@@ -249,7 +261,7 @@ $(document).ready(function () {
 							},
 							formatFunction: function (value) {
 								if (isNaN(value)) return value;
-								return parseFloat(value * 100).toFixed(2) + '%';
+								return parseFloat(Math.round(value * 100)).toFixed(2) + '%';
 							},
 							radius: 120,
 							enableSeriesToggle: false
