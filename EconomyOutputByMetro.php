@@ -29,6 +29,12 @@
 		.accordion-title {
 			background-color: #ffffff;
 		}
+		table th, table td {
+			font-weight: 300;
+			border-left: 0px;
+			border-right: 0px;
+			padding: 0;
+		}		
 	</style>	
   </head>
   <body>
@@ -82,12 +88,12 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="EconomyOutputByMetro.html" class="side-nav-link padding-left-2">GDP</a>
+						  <a href="#" class="side-nav-link padding-left-2  is-active">GDP</a>
 						  <!--a href="#" class="side-nav-link padding-left-2  is-active">By metro </a-->
 						</nav>				  
 					</div>
 				  </div>
-				  <div class="accordion-section" id="a2">
+				  <div class="accordion-section">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -96,7 +102,8 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2  is-active">Per capita</a>
+						  <a href="EconomyIncomePersonal.html" class="side-nav-link padding-left-2">Personal</a>
+						  <a href="#" class="side-nav-link padding-left-2">Per capita</a>
 						</nav>				  
 					</div>
 				  </div>
@@ -142,20 +149,46 @@
 		
 			<div class=" trailer-2 js-tab-group">
 			  <nav class="tab-nav">
-				<a class="tab-title is-active js-tab" id="0">Comparison</a>
+				<a class="tab-title is-active js-tab" id="0">Analysis (optional)</a>
+				<a class="tab-title js-tab" id="1">Arkansas MSAs</a>
+				<!--a class="tab-title js-tab" id="2">Another Tab</a-->
 			  </nav>
 			  <section class="tab-contents">
 				<article class="tab-section js-tab-section is-active">
 					<p><div class="pre-1">
-						<h2 class="leader-1">Compare Personal Income</h2>
+						<h2 class="leader-1">GDP Analysis Headline</h2>
 						<div class="column-17 center-column">
 							<div class="panel modifier-class">
 										  
-							  <p class="trailer-0"><iframe frameBorder="0" src="http://argis.ualr-iea.org/IEA_Widgets/pcpi.html" style='height: 625px; width: 100%;'></iframe></div></p>
+							  <p class="trailer-0"><img src="img/Analysis.png"></p>
 							</div>
 						</div>
-					</p>
-				</article>			
+						<h2 class="leader-1">What does this mean?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+						  <h2>How do we measure this?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+					</div>      
+				</p></article>
+				<article class="tab-section js-tab-section">
+				  <p><div class="pre-1">
+						<h2 class="leader-1">Arkansas MSAs</h2>
+						<div class="column-15 center-column">
+							<div class="panel modifier-class">										  
+							  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 100%;'></div></p>
+							</div>
+							<div class="panel modifier-class">										  
+							  <div id="chartContainer1" style='height: 400px; width: 100%;'></div>
+							</div>
+							<div class="panel modifier-class">										  
+							  <p class="trailer-0"><div id="pieChartContainer" style='height: 400px; width: 100%;'></div></p>
+							</div>
+						</div>
+					  </div>
+				  </p>
+				</article>
+				<!--article class="tab-section js-tab-section">
+				  <p>Tab 3 section</p>
+				</article-->
 			  </section>
 			</div>		
 
@@ -212,6 +245,6 @@
     <script>
        calcite.init()
     </script>
-	<script src="js/EconomyIncomePersonal.js"></script>
+	<script src="js/EconomyOutputByMetro.js"></script>
   </body>
 </html>
