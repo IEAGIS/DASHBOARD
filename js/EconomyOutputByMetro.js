@@ -261,7 +261,7 @@ $(document).ready(function () {
 							},
 							formatFunction: function (value) {
 								if (isNaN(value)) return value;
-								return parseFloat(Math.round(value * 100)).toFixed(2) + '%';
+								return parseFloat(Math.round(value * 100)).toFixed(0) + '%';
 							},
 							radius: 120,
 							enableSeriesToggle: false

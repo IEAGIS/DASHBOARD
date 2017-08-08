@@ -11,6 +11,16 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- get calcite-web css from the cdn (use latest version) -->
     <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/css/calcite-web.min.css">
+	<link rel='stylesheet' href='/jqwidgets/jqwidgets/styles/jqx.base.css' type='text/css'/>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- This code was auto-generated based on the selected settings -->
+	<!-- It has a dependency on jQWidgets ver.3.7 or later -->
+
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxcore.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxdata.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxdraw.js'></script>
+	<script type='text/javascript' src='/jqwidgets/jqwidgets/jqxchart.core.js'></script>
     <!--[if lt IE 9]>
       <script src="/assets/javascripts/libs/selectivizr.js"></script>
       <script src="/assets/javascripts/libs/html5shiv.js"></script>
@@ -19,6 +29,12 @@
 		.accordion-title {
 			background-color: #ffffff;
 		}
+		table th, table td {
+			font-weight: 300;
+			border-left: 0px;
+			border-right: 0px;
+			padding: 0;
+		}		
 	</style>	
   </head>
   <body>
@@ -43,9 +59,9 @@
       <div class="panel panel-dark-blue trailer-2">
         <div class="grid-container">
           <div class="column-24">
-            <a href="index.html"><h1 class="sub-nav-title leader-1 text-white">Arkanstats</h1></a>
+            <a href="index.html"><h1 class="sub-nav-title  text-white">Arkanstats</h1></a>
 			<nav class="sub-nav-list" role="navigation" aria-labelledby="subnav">
-			  <a href="#" class="sub-nav-link  is-active ">Economy</a>
+			  <a href="Economy.html" class="sub-nav-link  is-active ">Economy</a>
 			  <a href="Infrastructure.html" class="sub-nav-link ">Infrastructure</a>
 			  <a href="Education.html" class="sub-nav-link ">Education and Human Capital</a>
 			  <a href="Quality.html" class="sub-nav-link ">Quality of Life and Place</a>
@@ -63,7 +79,7 @@
 			<aside class="side-nav" aria-role="complementary">
             <h4 class="side-nav-title text-blue">Economy</h4>			
 				<aside class="js-accordion accordion">
-				  <div class="accordion-section">
+				  <div class="accordion-section"  id="a1">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -86,7 +102,7 @@
 						</nav>				  
 					</div>
 				  </div>
-				  <div class="accordion-section">
+				  <div class="accordion-section"  id="i1">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -101,7 +117,7 @@
 						</nav>				  
 					</div>
 				  </div>
-				  <div class="accordion-section">
+				  <div class="accordion-section"  id="e1">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -111,9 +127,9 @@
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
 						  <a href="EconomyEmploymentPayroll.html" class="side-nav-link padding-left-2">Payroll Employment</a>
-						  <a href="#" class="side-nav-link padding-left-2">Household Employment</a>
-						  <a href="#" class="side-nav-link padding-left-2">County Employment and Wages</a>
-						  <a href="#" class="side-nav-link padding-left-2">Alternative Measures of Underemployment</a>
+						  <a href="EconomyEmploymentHousehold.html" class="side-nav-link padding-left-2">Household Employment</a>
+						  <a href="#" class="side-nav-link padding-left-2 is-active">County Employment and Wages</a>
+						  <a href="EconomyEmploymentAlternative.html" class="side-nav-link padding-left-2">Alternative Measures of Underemployment</a>
 						</nav>				  
 					</div>
 				  </div>
@@ -126,8 +142,7 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2">Personal Consumption Expenditures (PCE)</a>
-						  <a href="#" class="side-nav-link padding-left-2">Arkansas Tax Sales</a>
+						  <a href="#" class="side-nav-link padding-left-2">Payroll Employment</a>
 						</nav>				  
 					</div>
 				  </div>
@@ -138,61 +153,58 @@
 				  <a href="#" class="side-nav-link">Projections</a>
 				</nav-->
 			  </aside>
-			 </aside>
-		  
-        </div>
-
+			 </aside>	  
+		</div>
         <!-- main content list -->
         <div class="column-19 pre-1">
-          <div class="block-group block-group-4-up tablet-block-group-2-up">
-            <div class="card block tablet-leader-1">
-              <figure class="card-image-wrap">
-                <img class="card-image" src="img/gdp.jpg" alt="Output">
-              </figure>	
-              <div class="card-content">
-                <h4><a href="#">Output (GDP)</a></h4>
-                <p class="font-size--1">Economy is off the charts! Lorem ipsum dolor sit amet.</p>
-              </div>		  
-            </div>
-            <div class="card block tablet-leader-1">
-              <!--figure class="card-image-wrap">
-                <img class="card-image" src="img/income.jpg" alt="Income">
-              </figure-->
-              <div class="card-content">
-                <h4><a href="#">Income</a></h4>
-                <p class="font-size--1">Graphs / pictures are optional. Lorem ipsum dolor sit amet, 
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-				Ut enim ad minim veniam, quis nostrud. </p>
-              </div>
-            </div>
-            <div class="card block tablet-leader-1">
-              <figure class="card-image-wrap">
-                <img class="card-image" src="img/employment.jpg" alt="Employment">
-              </figure>
-              <div class="card-content">
-                <h4><a href="#">Employment</a></h4>
-                <p class="font-size--1">Praesent commodo cursus magna, vel scelerisque nisl.</p>
-              </div>
-            </div>
-            <div class="card block tablet-leader-1">              <div class="card-content">
-                <h4><a href="#">Spending</a></h4>
-                <p class="font-size--1">Praesent commodo cursus magna, vel scelerisque nisl.</p>
-              </div>
-               <figure class="card-image-wrap">
-                <img class="card-image" src="img/spending.jpg" alt="Bridge Club, 1954">
-              </figure>
-		    </div>
-          </div>
+		
+			<panel class="panel-dark-blue column-19 trailer-1 pre-1">County Employment and Wages</panel>
+			<div class=" trailer-2 js-tab-group">
+			  <nav class="tab-nav">
+				<a class="tab-title js-tab is-active id="1">County</a>
+				<!--a class="tab-title js-tab" id="2">Another Tab</a-->
+			  </nav>			  <section class="tab-contents">
+				<article class="tab-section js-tab-section is-active">
+					<p>
+				<div style="margin-bottom: 1em;"><select><option>Select County</option></select></div>
+				<aside class="js-accordion accordion">
+				  <div class="accordion-section is-active" id="ab1">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Total Employed
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav" style="height:200px;">
+						  <a href="#" class="side-nav-link padding-left-2">Total Employed Chart</a>
+						</nav>				  
+					</div>
+				  </div>
+				  <div class="accordion-section"  id="aw1">
+					<h4 class="accordion-title">
+					  <span class="accordion-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
+					  </span>
+					  Number of Establishments
+					</h4>
+					<div class="accordion-content">
+						<nav role="navigation" aria-labelledby="sidenav" style="height:200px;">
+						  <a href="#" class="side-nav-link padding-left-2">Number of Establishments Chart</a>
+						</nav>				  
+					</div>
+				  </div>
+				</aside>					
+					</p>
+				</article>
+				<!--article class="tab-section js-tab-section">
+				  <p>Tab 3 section</p>
+				</article-->
+			  </section>
+			</div>		
 
-          <h2 class="leader-1">Text Content</h2>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
-          <h2>More Text</h2>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
         </div>
-
-      </div>
-    </div>
-
+	</div>
     <div class="footer padding-trailer-1 text-darkest-gray" role="contentinfo">
       <div class="grid-container">
         <!-- footer section 1 -->
@@ -235,15 +247,15 @@
           </ul>
         </div>
 
-      </div>
     </div>
-
+  </div>
+  </div>
     <!-- get calcite-web js from the cdn (use latest version) -->
     <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/js/calcite-web.min.js"></script>
-
     <!-- interactive patterns need to be initialized -->
     <script>
        calcite.init()
     </script>
+	<script src="js/EconomyEmploymentCounty.js"></script>
   </body>
 </html>
