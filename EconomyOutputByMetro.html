@@ -88,17 +88,12 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2">Per Capita</a>
+						  <a href="#" class="side-nav-link padding-left-2 is-active">Per Capita</a>
 						</nav>				  
 					</div>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
 						  <a href="#" class="side-nav-link padding-left-2">By Industry</a>
-						</nav>				  
-					</div>
-					<div class="accordion-content">
-						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2 is-active">By Metro Area</a>
 						</nav>				  
 					</div>
 				  </div>
@@ -161,12 +156,14 @@
 		
 			<div class=" trailer-2 js-tab-group">
 			  <nav class="tab-nav">
-				<a class="tab-title is-active js-tab" id="0">Analysis (optional)</a>
-				<a class="tab-title js-tab" id="1">Arkansas MSAs</a>
+				<a class="tab-title js-tab" id="0">Analysis (optional)</a>
+				<a class="tab-title js-tab" id="3">State</a>
+				<a class="tab-title js-tab" id="2">County</a>
+				<a class="tab-title is-active js-tab" id="1">Metro</a>
 				<!--a class="tab-title js-tab" id="2">Another Tab</a-->
 			  </nav>
 			  <section class="tab-contents">
-				<article class="tab-section js-tab-section is-active">
+				<article class="tab-section js-tab-section">
 					<p><div class="pre-1">
 						<h2 class="leader-1">Metro Analysis Headline</h2>
 						<div class="column-17 center-column">
@@ -182,8 +179,12 @@
 					</div>      
 				</p></article>
 				<article class="tab-section js-tab-section">
+				</article>
+				<article class="tab-section js-tab-section">
+				</article>
+				<article class="tab-section js-tab-section is-active">
 				  <p><div class="pre-1">
-						<h2 class="leader-1">Arkansas MSAs</h2>
+						<!--h2 class="leader-1">Arkansas MSAs</h2-->
 						<div class="column-15 center-column">
 							<div class="panel modifier-class">										  
 							  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 100%;'></div></p>
@@ -209,47 +210,48 @@
     <div class="footer padding-trailer-1 text-darkest-gray" role="contentinfo">
       <div class="grid-container">
         <!-- footer section 1 -->
-        <div class="column-5 pre-2">
-          <h6 class="font-size--2 avenir-bold">Header 2</h6>
-          <ul class="list-plain font-size--2">
-            <li><a class="link-darker-gray" href="#">Link 1</a></li>
-            <li><a class="link-darker-gray" href="#">Link 2</a></li>
-            <li><a class="link-darker-gray" href="#">Link 3</a></li>
-          </ul>
+         <div class="column-5 pre-1">
+          <h6 class="font-size--10 avenir-bold">Arkanstats</h6>
+          <p>ArkanStats is a service provided by the Arkansas Economic Development Institute (AEDI).</p>
+			<p>Vehicula mauris lipsum adipiscing lipsum aenean orci lorem Asequat.</p>
         </div>
 
         <!-- footer section 2 -->
-        <div class="column-5 pre-1">
-          <h6 class="font-size--2 avenir-bold">Header 2</h6>
+       <div class="column-5 pre-2">
+          <h6 class="font-size--10 avenir-bold">Contact Details</h6>
           <ul class="list-plain font-size--2">
-            <li><a class="link-darker-gray" href="#">Link 1</a></li>
-            <li><a class="link-darker-gray" href="#">Link 2</a></li>
-            <li><a class="link-darker-gray" href="#">Link 3</a></li>
+			<li><span class="icon-ui-home"></span><mark>Address:</mark> 2801 S. University Ave.</li>
+			<li><img src="img/blank.png" style="width:23px;" alt="">Little Rock, AR 72204-1099</li>
+			<li><span class="icon-ui-phone"></span><mark>Phone:</mark> 501.569.8519</li>
+			<!--li><span class="icon-ui-contact"></span><mark>Email:</mark> contact@ualr.edu</li--> 
           </ul>
+		  <section class="footer-social-nav">
+            <a class="icon-social-facebook" href="https://www.facebook.com/ArkansasEcon/"></a>          
+            <a class="icon-social-linkedin" href="https://www.linkedin.com/company/arkansaseconomicdevelopmentinstitute"></a>          
+            <a class="icon-social-contact" href="http://ualr.edu/aedi/about-us/contact-us/"></a>
+          </section>		  
         </div>
 
+		
         <!-- footer section 3 -->
         <div class="column-5 pre-1">
-          <h6 class="font-size--2 avenir-bold">Header 3</h6>
-          <ul class="list-plain font-size--2">
-            <li><a class="link-darker-gray" href="#">Link 1</a></li>
-            <li><a class="link-darker-gray" href="#">Link 2</a></li>
-            <li><a class="link-darker-gray" href="#">Link 3</a></li>
-          </ul>
+          <h6 class="font-size--10 avenir-bold">About Us</h6>
+          <p>ArkanStats is a service provided by the Arkansas Economic Development Institute (AEDI).</p>
+			<p>Vehicula mauris lipsum adipiscing lipsum aenean orci lorem Asequat.</p>
         </div>
 
         <!-- footer section 4 -->
         <div class="column-4 pre-1">
-          <h6 class="font-size--2 avenir-bold">Header 4</h6>
-          <ul class="list-plain font-size--2">
-            <li><a class="link-darker-gray" href="#">Link 1</a></li>
-            <li><a class="link-darker-gray" href="#">Link 2</a></li>
-            <li><a class="link-darker-gray" href="#">Link 3</a></li>
-          </ul>
-        </div>
+          <h6 class="font-size--10 avenir-bold">Subscribe</h6>
+			<p>Subscribe to our e-mail newsletter to receive updates.</p>
+			<form class="subscribe_form">
+				<input type="email" placeholder="Enter your email">
+				<button type="submit">Submit</button>
+			</form>        
+		</div>
 
+      </div>
     </div>
-  </div>
   </div>
     <!-- get calcite-web js from the cdn (use latest version) -->
     <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/js/calcite-web.min.js"></script>
