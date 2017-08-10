@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	
 	var metroInitGDP = function(){
 		
 	
@@ -288,4 +287,319 @@ $(document).ready(function () {
 		}
 		$('#chartContainerMetro').jqxChart('refresh');
 	}	
+	
+	var stateInitGDP = function(){
+		
+	/* input data */
+	var data = [
+	{Year: '1997', Arkansas: '60417', Louisiana: '117982', Mississippi: '58433', Missouri: '163526', Oklahoma: '79915', Tennessee: '155195', Texas: '614436'},
+	{Year: '1998', Arkansas: '62275', Louisiana: '120493', Mississippi: '61112', Missouri: '170692', Oklahoma: '81672', Tennessee: '166282', Texas: '648156'},
+	{Year: '1999', Arkansas: '66715', Louisiana: '126357', Mississippi: '63993', Missouri: '178605', Oklahoma: '84642', Tennessee: '174940', Texas: '683578'},
+	{Year: '2000', Arkansas: '68809', Louisiana: '133200', Mississippi: '65937', Missouri: '188736', Oklahoma: '91421', Tennessee: '181216', Texas: '741115'},
+	{Year: '2001', Arkansas: '70849', Louisiana: '138911', Mississippi: '67445', Missouri: '192227', Oklahoma: '97441', Tennessee: '185896', Texas: '776521'},
+	{Year: '2002', Arkansas: '74097', Louisiana: '140451', Mississippi: '69231', Missouri: '197222', Oklahoma: '99459', Tennessee: '194846', Texas: '788944'},
+	{Year: '2003', Arkansas: '78774', Louisiana: '155942', Mississippi: '73814', Missouri: '205164', Oklahoma: '105899', Tennessee: '204167', Texas: '833469'},
+	{Year: '2004', Arkansas: '85261', Louisiana: '171375', Mississippi: '77778', Missouri: '215606', Oklahoma: '113929', Tennessee: '218126', Texas: '909635'},
+	{Year: '2005', Arkansas: '90319', Louisiana: '199683', Mississippi: '81678', Missouri: '224091', Oklahoma: '125243', Tennessee: '227505', Texas: '990054'},
+	{Year: '2006', Arkansas: '94839', Louisiana: '207507', Mississippi: '86291', Missouri: '232795', Oklahoma: '137584', Tennessee: '239017', Texas: '1088295'},
+	{Year: '2007', Arkansas: '97384', Louisiana: '209455', Mississippi: '91422', Missouri: '240613', Oklahoma: '145693', Tennessee: '243001', Texas: '1179214'},
+	{Year: '2008', Arkansas: '99838', Louisiana: '218781', Mississippi: '97134', Missouri: '250088', Oklahoma: '156398', Tennessee: '249052', Texas: '1243387'},
+	{Year: '2009', Arkansas: '98020', Louisiana: '210879', Mississippi: '93669', Missouri: '250436', Oklahoma: '143648', Tennessee: '246541', Texas: '1166516'},
+	{Year: '2010', Arkansas: '102951', Louisiana: '232596', Mississippi: '95810', Missouri: '255865', Oklahoma: '149913', Tennessee: '252478', Texas: '1243398'},
+	{Year: '2011', Arkansas: '107287', Louisiana: '236248', Mississippi: '96968', Missouri: '257225', Oklahoma: '163868', Tennessee: '263175', Texas: '1344733'},
+	{Year: '2012', Arkansas: '109226', Louisiana: '241378', Mississippi: '101351', Missouri: '266245', Oklahoma: '174305', Tennessee: '278298', Texas: '1437893'},
+	{Year: '2013', Arkansas: '114456', Louisiana: '234608', Mississippi: '103523', Missouri: '275911', Oklahoma: '186007', Tennessee: '288012', Texas: '1536472'},
+	{Year: '2014', Arkansas: '117922', Louisiana: '242102', Mississippi: '104284', Missouri: '282034', Oklahoma: '196767', Tennessee: '298865', Texas: '1614127'},
+	{Year: '2015', Arkansas: '118677', Louisiana: '238075', Mississippi: '105871', Missouri: '292718', Oklahoma: '188011', Tennessee: '316659', Texas: '1611189'},
+	{Year: '2016', Arkansas: '120689', Louisiana: '235109', Mississippi: '107680', Missouri: '300891', Oklahoma: '182937', Tennessee: '328770', Texas: '1616801'}];
+	
+	/* data adapter settings */
+	var dataAdapter = new $.jqx.dataAdapter({
+		localdata: data,
+		datafields: [
+			{name: "Year", type: "number"},
+			{name: "Arkansas", type: "number"},
+			{name: "Louisiana", type: "number"},
+			{name: "Mississippi", type: "number"},
+			{name: "Missouri", type: "number"},
+			{name: "Oklahoma", type: "number"},
+			{name: "Tennessee", type: "number"},
+			{name: "Texas", type: "number"}
+		]
+	});
+
+	/* chart settings */
+	var chartSettings = {
+		source: dataAdapter,
+		title: "Gross Domestic Product",
+		description: "1997 - 2016 (Millions of Dollars)",
+		padding: {
+			left: 5,
+			top: 5,
+			right: 5,
+			bottom: 5
+		},
+		titlePadding: {
+			left: 5,
+			top: 5,
+			right: 5,
+			bottom: 5
+		},
+		enableAnimations: false,
+		xAxis: {
+			dataField: "Year",
+			valuesOnTicks: false
+		},
+		valueAxis: {
+			valuesOnTicks: true,
+			labels: {
+				formatSettings: {
+					prefix: "$",
+					thousandsSeparator: ",",
+					decimalPlaces: 0
+				}
+			},
+			toolTipFormatSettings: {
+				prefix: "$",
+				thousandsSeparator: ","
+			}
+		},
+		seriesGroups: [			
+			{
+				type: "column",
+				series: [					
+					{
+						dataField: "Arkansas"
+					},
+					{
+						dataField: "Louisiana"
+					},
+					{
+						dataField: "Mississippi"
+					},
+					{
+						dataField: "Missouri"
+					},
+					{
+						dataField: "Oklahoma"
+					},
+					{
+						dataField: "Tennessee"
+					},
+					{
+						dataField: "Texas"
+					}
+				]
+			}
+		]
+	}
+	
+	/* create chart in the container element */
+	$('#chartContainer').jqxChart(chartSettings);	
+
+	}
+
+	var stateInitGrowth = function(){
+			
+	/* input data */
+	var data = [
+	{Year: '2010', Arkansas: '100', Louisiana: '100', Mississippi: '100', Missouri: '100', Oklahoma: '100', Tennessee: '100', Texas: '100'},
+	{Year: '2011', Arkansas: '104.2117124', Louisiana: '101.5701044', Mississippi: '101.2086421', Missouri: '100.5315303', Oklahoma: '109.3087324', Tennessee: '104.2368048', Texas: '108.1498442'},
+	{Year: '2012', Arkansas: '106.0951326', Louisiana: '103.7756453', Mississippi: '105.7833212', Missouri: '104.0568268', Oklahoma: '116.2707704', Tennessee: '110.2266336', Texas: '115.6422159'},
+	{Year: '2013', Arkansas: '111.1752193', Louisiana: '100.8650192', Mississippi: '108.0503079', Missouri: '107.8346003', Oklahoma: '124.0766311', Tennessee: '114.0740975', Texas: '123.5704095'},
+	{Year: '2014', Arkansas: '114.5418694', Louisiana: '104.0869147', Mississippi: '108.8445882', Missouri: '110.2276591', Oklahoma: '131.2541274', Tennessee: '118.3726899', Texas: '129.8157951'},
+	{Year: '2015', Arkansas: '115.275228', Louisiana: '102.3555865', Mississippi: '110.5009915', Missouri: '114.4032986', Oklahoma: '125.4134064', Tennessee: '125.4204327', Texas: '129.5795071'},
+	{Year: '2016', Arkansas: '117.2295558', Louisiana: '101.0804141', Mississippi: '112.3891034', Missouri: '117.5975612', Oklahoma: '122.0287767', Tennessee: '130.2172863', Texas: '130.0308509'}];
+	
+	/* data adapter settings */
+	var dataAdapter = new $.jqx.dataAdapter({
+		localdata: data,
+		datafields: [
+			{name: "Year", type: "number"},
+			{name: "Arkansas", type: "number"},
+			{name: "Louisiana", type: "number"},
+			{name: "Mississippi", type: "number"},
+			{name: "Missouri", type: "number"},
+			{name: "Oklahoma", type: "number"},
+			{name: "Tennessee", type: "number"},
+			{name: "Texas", type: "number"}
+		]
+	});
+
+	/* chart settings */
+	var chartSettings = {
+		source: dataAdapter,
+		title: "GDP Growth Index",
+		description: "2010 - 2016 (2010 = 100)",
+		padding: {
+			left: 5,
+			top: 5,
+			right: 5,
+			bottom: 5
+		},
+		titlePadding: {
+			left: 5,
+			top: 5,
+			right: 5,
+			bottom: 5
+		},
+		enableAnimations: false,
+		xAxis: {
+			dataField: "Year",
+			valuesOnTicks: false
+		},
+		valueAxis: {
+			valuesOnTicks: true,
+			toolTipFormatSettings: {
+				thousandsSeparator: ","
+			}
+		},
+		seriesGroups: [			
+			{
+				type: "line",
+				series: [					
+					{
+						dataField: "Arkansas"
+					},
+					{
+						dataField: "Louisiana"
+					},
+					{
+						dataField: "Mississippi"
+					},
+					{
+						dataField: "Missouri"
+					},
+					{
+						dataField: "Oklahoma"
+					},
+					{
+						dataField: "Tennessee"
+					},
+					{
+						dataField: "Texas"
+					}
+				]
+			}
+		]
+	}
+	
+	/* create chart in the container element */
+	$('#chartContainer').jqxChart(chartSettings);
+	}	
+	
+	var stateInitPie = function(){
+		
+		/* input data */
+		var data = [
+		{2016: '0.558890337', City: 'Texas'},
+		{2016: '0.113648109', City: 'Tennessee'},
+		{2016: '0.10401099',  City: 'Missouri'},
+		{2016: '0.081271689', City: 'Louisiana'},
+		{2016: '0.063237047', City: 'Oklahoma'},
+		{2016: '0.041719368', City: 'Arkansas'},
+		{2016: '0.037222461', City: 'Mississippi'}];
+		                  
+		/* data adapter settings */
+		var dataAdapter = new $.jqx.dataAdapter({
+			localdata: data,
+			datafields: [
+				{name: "City", type: "string"},
+				{name: "2016", type: "number"}
+			]
+		});
+
+		/* chart settings */
+		var chartSettings = {
+			source: dataAdapter,
+			title: "Relative Shares of GDP",
+			description: "2016",
+			/*legendLayout: {
+				left: 70,
+				top: 160,
+				width: 300,
+				height: 200,
+				flow: "vertical"
+			},*/
+			padding: {
+				left: 5,
+				top: 5,
+				right: 5,
+				bottom: 5
+			},
+			titlePadding: {
+				left: 5,
+				top: 5,
+				right: 5,
+				bottom: 5
+			},
+			enableAnimations: false,
+			xAxis: {
+				dataField: "City",
+				valuesOnTicks: false
+			},
+			valueAxis: {
+				valuesOnTicks: true
+			},
+			seriesGroups: [			
+				{
+					type: "pie",
+					series: [					
+						{
+							dataField: "2016",
+							displayText: "City",
+							labels: {
+								visible: true
+							},
+							formatFunction: function (value) {
+								if (isNaN(value)) return value;
+								return parseFloat(Math.round(value * 100)).toFixed(0) + '%';
+							},
+							radius: 120,
+							enableSeriesToggle: false
+						}
+					]
+				}
+			]
+		}
+		
+		/* create chart in the container element */
+		$('#chartContainer').jqxChart(chartSettings);		
+	}
+	
+	var selectReport = function(rpt){
+		switch(rpt){
+			
+			case "GDP":
+			  stateInitGDP();
+			break;
+			case "GDPGrowth":
+			  stateInitGrowth();
+			break;
+			case "GDPShares":
+			  stateInitPie();
+			break;
+		}
+		$('#chartContainer').jqxChart('refresh');
+	}
+	$("#selRpt").on("change",function(){
+		selectReport($("#selRpt  option:selected").val());
+	})
+	//initGrowth();
+	//initPie();
+	//initGDP();	
+		calcite.bus.on('tabs:active', function (options) {
+		  //console.log(options.active.id) // => "top-nav"
+			switch (options.active.id) {
+				case "1":
+				  selectReport($("#selRpt  option:selected").val());
+				break;
+				case "2":
+					selectReportMetro($("#selRptMetro  option:selected").val());
+				break;
+				default:
+				break;
+			}			  
+		});	
+		calcite.bus.emit('accordion:toggle',{node: document.getElementById('a1')});	
 });

@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Arkanstats</title>
+    <title>Arkanstats Dashboard</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- get calcite-web css from the cdn (use latest version) -->
     <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.7/css/calcite-web.min.css">
@@ -88,7 +88,7 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="EconomyOutputPerCapita.html" class="side-nav-link padding-left-2">Per Capita</a>
+						  <a href="#" class="side-nav-link padding-left-2 is-active">Per Capita</a>
 						</nav>				  
 					</div>
 					<div class="accordion-content">
@@ -97,7 +97,7 @@
 						</nav>				  
 					</div>
 				  </div>
-				  <div class="accordion-section"  id="i1">
+				  <div class="accordion-section">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -112,7 +112,7 @@
 						</nav>				  
 					</div>
 				  </div>
-				  <div class="accordion-section"  id="e1">
+				  <div class="accordion-section">
 					<h4 class="accordion-title">
 					  <span class="accordion-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32" class="svg-icon"><path d="M28 9v5L16 26 4 14V9l12 12L28 9z"/></svg>
@@ -121,7 +121,7 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2  is-active">Payroll Employment</a>
+						  <a href="EconomyEmploymentPayroll.html" class="side-nav-link padding-left-2">Payroll Employment</a>
 						  <a href="EconomyEmploymentHousehold.html" class="side-nav-link padding-left-2">Household Employment</a>
 						  <a href="EconomyEmploymentCounty.html" class="side-nav-link padding-left-2">County Employment and Wages</a>
 						  <a href="EconomyEmploymentAlternative.html" class="side-nav-link padding-left-2">Alternative Measures of Underemployment</a>
@@ -137,7 +137,8 @@
 					</h4>
 					<div class="accordion-content">
 						<nav role="navigation" aria-labelledby="sidenav">
-						  <a href="#" class="side-nav-link padding-left-2">Payroll Employment</a>
+						  <a href="#" class="side-nav-link padding-left-2">PCE</a>
+						  <a href="#" class="side-nav-link padding-left-2">Arkansas Tax Sales</a>
 						</nav>				  
 					</div>
 				  </div>
@@ -152,27 +153,67 @@
 		</div>
         <!-- main content list -->
         <div class="column-19 pre-1">
-			<panel class="panel-dark-blue column-18 trailer-1">Payroll Employment</panel>
+		
 			<div class=" trailer-2 js-tab-group">
 			  <nav class="tab-nav">
-				<a class="tab-title is-active js-tab" id="0">State</a>
-				<a class="tab-title js-tab id="1">County</a>
+				<a class="tab-title is-active js-tab" id="0">Analysis (optional)</a>
+				<a class="tab-title js-tab" id="1">Region</a>
 				<a class="tab-title js-tab" id="2">Metro</a>
 				<!--a class="tab-title js-tab" id="2">Another Tab</a-->
 			  </nav>
 			  <section class="tab-contents">
 				<article class="tab-section js-tab-section is-active">
-						<select style="float:left;padding-left:5px;"><option>Total Employment</option><option>Average Weekly Hours</option></select>
-						<span style="float:left;">&nbsp;&nbsp;</span><select><option>Arkansas</option></select>
-				</article>				
+					<p><div class="pre-1">
+						<h2 class="leader-1">Metro Analysis Headline</h2>
+						<div class="column-17 center-column">
+							<div class="panel modifier-class">
+										  
+							  <p class="trailer-0"><img src="img/Analysis.png"></p>
+							</div>
+						</div>
+						<h2 class="leader-1">What does this mean?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+						  <h2>How do we measure this?</h2>
+						  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas faucibus mollis interdum.</p>
+					</div>      
+				</p></article>
 				<article class="tab-section js-tab-section">
-						<select style="float:left;padding-left:5px;"><option>Total Employment</option><option>Average Weekly Hours</option></select>
-						<span style="float:left;">&nbsp;&nbsp;</span><select><option>Arkansas</option></select>
+				  <p>
+					<div class="column-18 center-column trailer-1">
+					  <label>
+					  Select Report
+						<select id="selRpt">
+							<option value="GDP">GDP</option>
+							<option value="GDPGrowth">GDP Growth Index</option>
+							<option value="GDPShares">GDP Relative Shares</option>
+						</select>
+					  </label>
+					</div>	
+					<div class="column-15 center-column">
+						<div class="panel modifier-class">										  
+						  <p class="trailer-0"><div id="chartContainer" style='height: 400px; width: 100%;'></div></p>
+						</div>
+					</div>
+				  </p>
 				</article>
 				<article class="tab-section js-tab-section">
-						<select style="float:left;padding-left:5px;"><option>Total Employment</option><option>Average Weekly Hours</option></select>
-						<span style="float:left;">&nbsp;&nbsp;</span><select><option>Pine Bluff</option></select>
-
+				  <p>
+					<div class="column-18 center-column trailer-1">
+					  <label>
+					  Select Report
+						<select id="selRptMetro">
+							<option value="metroGDP">GDP</option>
+							<option value="metroGDPGrowth">GDP Growth Index</option>
+							<option value="metroGDPShares">GDP Relative Shares</option>
+						</select>
+					  </label>
+					</div>	
+						<div class="column-15 center-column">
+							<div class="panel modifier-class">										  
+							  <p class="trailer-0"><div id="chartContainerMetro" style='height: 400px; width: 100%;'></div></p>
+							</div>
+					  </div>
+				  </p>
 				</article>
 			  </section>
 			</div>		
@@ -231,6 +272,6 @@
     <script>
        calcite.init()
     </script>
-	<script src="js/EconomyEmploymentPayroll.js"></script>
+	<script src="js/EconomyOutputPerCapita.js"></script>
   </body>
 </html>
